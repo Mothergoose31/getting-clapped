@@ -3,12 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "dev": "next dev -p 8080",
+    "build": "rm -rf ./build && NODE_ENV=production next build",
+    "start": "next start -p 8080",
+    "deploy": "npm run build && gcloud app deploy"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.4",
+    "highcharts": "^9.1.0",
+    "highcharts-react-official": "^3.0.0",
     "next": "10.2.0",
+    "next-images": "^1.7.0",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   }
